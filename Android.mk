@@ -22,7 +22,12 @@ LOCAL_SRC_FILES := lights.c
 
 LOCAL_SHARED_LIBRARIES := liblog
 
-LOCAL_MODULE := lights.$(TARGET_BOOTLOADER_BOARD_NAME)
+LOCAL_MODULE := lights.$(TARGET_BOARD_PLATFORM)
+LOCAL_VENDOR_MODULE := true
+LOCAL_C_INCLUDES := \
+    system/core/libcutils/include \
+    system/core/libsystem/include \
+    hardware/libhardware/include \
 
 LOCAL_MODULE_TAGS := optional
 
